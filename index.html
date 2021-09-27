@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hovering</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: darkturquoise;
+        }
+        
+        #circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 200px;
+            background: rgb(195, 22, 160);
+            border-radius: 100px;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+            transition: cubic-bezier(0.075, 0.82, 0.165, 1) 3s;
+        }
+        
+        .hover {
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="circle">Hover</div>
+    <script>
+        const circle = document.querySelector('#circle');
+
+        circle.addEventListener('mouseenter', () => {
+            if (!circle.classList.contains('hover')) {
+                circle.classList.add('hover');
+            }
+        });
+
+        circle.addEventListener('mouseleave', () => {
+            if (circle.classList.contains('hover')) {
+                circle.classList.remove('hover');
+            }
+        });
+    </script>
+</body>
+
+</html>
